@@ -1,57 +1,80 @@
-📈 Hybrid Quant Trading Strategy (Python)
+# 📈 NIFTY Stock Market Data Analysis using Python
 
-A multi-asset, rule-based quantitative trading system that dynamically selects high-momentum stocks, applies trend confirmation, and constructs a risk-adjusted equity portfolio using volatility-based weighting.
+## Overview
+This project performs exploratory data analysis (EDA) on a large universe of Indian stock market equities using Python.  
+The goal is to understand price trends, volatility, correlations, and return characteristics across major stocks listed on the NSE.
 
-This project demonstrates systematic portfolio design, signal engineering, and performance evaluation using Python.
+Using financial time series data, the project analyzes market behavior over the past year and extracts insights about stock performance and risk dynamics.
 
-🔹 Strategy Overview
+---
 
-The model combines three core components:
+## Objectives
+- Analyze stock price trends across multiple NSE-listed companies
+- Measure and compare annualized returns and volatility
+- Study correlations between stocks to understand diversification
+- Visualize financial market behavior using Python
 
-Momentum Ranking
-Ranks 60 NSE stocks by 3-month relative performance.
+---
 
-Trend Filter
-Trades only stocks above their 50-day moving average.
+## Technologies Used
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- yFinance
 
-Risk-Adjusted Position Sizing
-Allocates capital using inverse-volatility weighting to control risk.
+---
 
-Each day, the system selects the top 10 momentum stocks that satisfy the trend condition and constructs a dynamically rebalanced portfolio.
+## Data Source
+Stock market data is retrieved using the **Yahoo Finance API** via the `yfinance` Python library.
 
-📊 Performance (Recent Backtest)
-Metric	Value
-Annualized Return	57.9%
-Volatility	15.3%
-Sharpe Ratio	3.86
-Max Drawdown	-7.4%
+Data includes:
+- Historical closing prices
+- Daily returns
+- Volatility estimates
 
-Note: Results are based on historical data, exclude transaction costs, and are for research/educational purposes only.
+---
 
-⚙️ Tech Stack
+## Analysis Performed
 
-Python
+### 1. Stock Price Trend Analysis
+Visualizes historical price movements across multiple companies to understand market behavior.
 
-Pandas
+### 2. Annualized Volatility
+Measures risk levels of stocks by calculating annualized standard deviation of returns.
 
-NumPy
+### 3. Correlation Matrix
+Examines relationships between stock returns to identify diversification opportunities.
 
-Matplotlib
+### 4. Summary Statistics
+Key metrics computed for each stock:
+- Annualized Return
+- Volatility
+- Maximum Price
+- Minimum Price
 
-yfinance
+---
 
-🚀 How It Works (Pipeline)
+## Visualizations
+The project generates:
 
-Download NSE stock data using yfinance
+- 📈 Stock Price Trend Charts
+- 📊 Annualized Volatility Comparison
+- 🔥 Correlation Heatmap
+- 📉 Return Distribution Insights
 
-Compute momentum, moving averages, and volatility
+---
 
-Rank stocks by momentum
+## Example Insights
+- Certain sectors show significantly higher volatility compared to others.
+- Metals and energy stocks exhibited stronger returns during the analysis period.
+- Some IT stocks showed negative annual performance during the same timeframe.
 
-Filter by trend (price > MA50)
+---
 
-Apply volatility-based weights
+## How to Run
 
-Backtest portfolio performance
+1. Clone the repository
 
-Evaluate risk-adjusted metrics
+```bash
+git clone https://github.com/yourusername/stock-market-analysis.git
